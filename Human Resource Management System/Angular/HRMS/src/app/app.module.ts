@@ -17,6 +17,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { EditemployeeComponent } from './editemployee/editemployee.component';
 import { EditsalaryComponent } from './editsalary/editsalary.component';
 import { EditleavesComponent } from './editleaves/editleaves.component';
+import { SearchemployeeComponent } from './searchemployee/searchemployee.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { EditleavesComponent } from './editleaves/editleaves.component';
     EditemployeeComponent,
     EditsalaryComponent,
     EditleavesComponent,
+    SearchemployeeComponent,
     
   ],
   imports: [

@@ -26,10 +26,8 @@
       <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password"
         [(ngModel)]="user.password" required #password="ngModel" [class.is-invalid]="password.invalid && password.touched">
         <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is required field</small>
-    </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="remember"> Remember me</label>
-    </div>
+    </div><br>
+    
     <button type="submit" class="btn btn-primary" [disabled]="loginform.form.invalid">Log In</button>
   </form>
   <!-- both way it work -->

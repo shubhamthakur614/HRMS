@@ -107,4 +107,11 @@ export class HrmsService {
       console.log("in service lid fetch "+sid)
       return this.http.get(`${this.url}/deletesalary/${sid}`)
     }
+
+    //search employee by email
+    public searchEmpFromRemote(employee:any):Observable<any>
+    {
+      console.log("employee email at service "+employee.email);
+      return this.http.get<any>("http://localhost:81/searchemail/"+employee.email);
+    }
 }

@@ -168,4 +168,11 @@ public class HrmsController {
 		return eservice.getemp(emp.getId()).get();
 	}
 
+	//search employee by email id
+	@GetMapping("/searchemail/{email}")
+	public Employee findEmployee(@PathVariable String email)
+	{
+		System.out.println(email);
+		return eservice.fetchEmployeeByEmail(email);
+	}
 }
