@@ -21,7 +21,7 @@ export class AddleavesComponent implements OnInit {
   {
     this.service.addLeavesFromRemote(this.leaves).subscribe(
       data => {
-        console.log("Salary Added Successfully ");
+        console.log("Leaves Added Successfully ");
         this.msg="Employee Leaves Added Successfully"
       },
       error => {

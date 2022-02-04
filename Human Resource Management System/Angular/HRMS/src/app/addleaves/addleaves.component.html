@@ -15,20 +15,6 @@
 
 <body>
 
-    <nav class="navbar navbar-inverse visible-xs">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-            </div>
-
-        </div>
-    </nav>
-
     <div class="container-fluid">
         <div class="row content">
             <div class="col-sm-2 sidenav hidden-xs">
@@ -57,7 +43,7 @@
                         <h1 style="text-align: center;"> Add Employee Leaves</h1>
                         <div class="card-body">
                             <form #addleavesform="ngForm" (ngSubmit)="addLeaves()">
-                                <small class="text-danger">{{msg}}</small>
+                                <small class="text-success">{{msg}}</small>
                                 <div class="form">
                                     
                                     <div class="row">

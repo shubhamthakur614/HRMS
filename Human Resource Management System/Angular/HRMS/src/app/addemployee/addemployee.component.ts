@@ -14,6 +14,7 @@ export class AddemployeeComponent implements OnInit {
 
   employee=new Employee();
   msg="";
+  not_available=false;
   constructor(private service: HrmsService,private router:Router) { }
 
   ngOnInit(): void {
@@ -24,13 +25,13 @@ export class AddemployeeComponent implements OnInit {
     this.service.addEmployeeFromRemote(this.employee).subscribe(
       data => {
         console.log("Employee Added Successfully ");
-        this.msg="Employee Added Successfully"      
-
+        this.not_available=true;
+        this.msg="Employee Added Successfully" 
       },
       error => {
         console.log("exception occured");
-        this.msg="Username Allready Exists  !!!"
-
+        this.msg="Email Address Allready Exists  !!!"
+      
       }
     )
   }
