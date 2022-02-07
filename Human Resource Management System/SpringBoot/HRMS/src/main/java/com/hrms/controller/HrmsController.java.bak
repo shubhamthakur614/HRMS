@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -104,20 +105,8 @@ public class HrmsController {
 
 	// add leaves
 	@PostMapping("/addleaves")
-	public Leaves addLeaves(@RequestBody Leaves leaves) throws Exception {
-		// search employee email by eid
-		int tempId = leaves.getEid();
-		System.out.println("TempEid: " + tempId);
-		Employee emp = lservice.findEmailByEid(tempId);
-		
-		if (emp.getEmail() != null) {
-			leaves.setEmail(emp.getEmail());
-			return lservice.register(leaves);
-		} else {
-			throw new Exception("Employee with " + tempId + " Not exists ");
-		}
-		
-
+	public Leaves addLeaves(@RequestBody Leaves leaves) {
+		return lservice.register(leaves);
 	}
 
 	// get employee by id
@@ -171,11 +160,18 @@ public class HrmsController {
 		String result = sservice.deleteSalary(sid);
 	}
 
-// Salary CRUD End		
+//for Salary CRUD End		
+	@PostMapping("/searchemployee")
+	public Employee getemp(@RequestBody Employee emp)
+	{
+		System.out.println(emp.getId()+" "+emp.getCity());
+		return eservice.getemp(emp.getId()).get();
+	}
 
-	// search employee by email id
+	//search employee by email id
 	@GetMapping("/searchemail/{email}")
-	public Employee findEmployee(@PathVariable String email) {
+	public Employee findEmployee(@PathVariable String email)
+	{
 		System.out.println(email);
 		return eservice.fetchEmployeeByEmail(email);
 	}

@@ -11,7 +11,6 @@ import { Leaves } from '../leaves';
 export class AddleavesComponent implements OnInit {
 
   leaves=new Leaves();
-  not_available=false;
   msg="";
   constructor(private service: HrmsService,private router:Router) { }
 
@@ -23,12 +22,11 @@ export class AddleavesComponent implements OnInit {
     this.service.addLeavesFromRemote(this.leaves).subscribe(
       data => {
         console.log("Leaves Added Successfully ");
-        this.not_available=true;
         this.msg="Employee Leaves Added Successfully"
       },
       error => {
         console.log("exception occured");
-        this.msg="Employee is not present with given Id"
+        this.msg="Employee is not present with given id"
 
       }
     )

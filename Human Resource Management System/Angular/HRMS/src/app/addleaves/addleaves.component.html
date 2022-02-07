@@ -43,7 +43,12 @@
                         <h1 style="text-align: center;"> Add Employee Leaves</h1>
                         <div class="card-body">
                             <form #addleavesform="ngForm" (ngSubmit)="addLeaves()">
-                                <small class="text-success">{{msg}}</small>
+                                <div *ngIf="not_available; else available">
+                                    <small class="text-success">{{msg}}</small>
+                                </div>
+                                <ng-template #available>
+                                    <small class="text-danger">{{msg}}</small>
+                                </ng-template>
                                 <div class="form">
                                     
                                     <div class="row">

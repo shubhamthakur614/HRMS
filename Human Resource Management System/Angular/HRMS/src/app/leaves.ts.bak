@@ -6,6 +6,5 @@ export class Leaves
     fromDate:string;
     toDate:string;
     description:string;
-	email:string;
     constructor() {}
 }

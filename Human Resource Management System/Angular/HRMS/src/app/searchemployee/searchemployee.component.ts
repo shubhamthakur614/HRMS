@@ -14,7 +14,8 @@ export class SearchemployeeComponent implements OnInit {
  
 employee:any=new Employee();
 msg:string;
-data:any;
+//we always denote observable as $ so its identified
+data$:any;
 available:boolean= false;
 
   constructor(private http:HttpClient,private router:Router,private service:HrmsService) { }
@@ -25,10 +26,10 @@ available:boolean= false;
   {
     console.log(this.employee);
     this.service.searchEmpFromRemote(this.employee).subscribe(
-      data=>
+      response=>
       {
-        this.data=data;
-        if(this.data==null)
+        this.data$=response;
+        if(this.data$==null)
         {
           console.log("employee object is null")
           this.msg="Employee is not found";
@@ -39,8 +40,8 @@ available:boolean= false;
           this.available=true;
         }
         
-        console.log("Return employee object: "+this.data.fname);
-        console.log("Return employee object: "+this.data.email);
+        console.log("Return employee object: "+this.data$.fname);
+        console.log("Return employee object: "+this.data$.email);
 
       },
       errors=>
