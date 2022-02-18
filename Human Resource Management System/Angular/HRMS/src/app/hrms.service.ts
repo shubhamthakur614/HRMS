@@ -22,6 +22,11 @@ export class HrmsService {
       return this.http.post<any>("http://localhost:81/loginuser",user)
     }
 
+    public addHrFromRemote(user:User):Observable<any>
+    {
+      return this.http.post<any>("http://localhost:81/addhr",user)
+    }
+
   //add employee 
     public addEmployeeFromRemote(employee:Employee):Observable<any>
     {

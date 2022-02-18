@@ -13,6 +13,7 @@ import { EditleavesComponent } from './editleaves/editleaves.component';
 import { EditsalaryComponent } from './editsalary/editsalary.component';
 import {EditemployeeComponent} from './editemployee/editemployee.component'
 import { SearchemployeeComponent } from './searchemployee/searchemployee.component';
+import { AddhrComponent } from './addhr/addhr.component';
 
 
 
@@ -32,6 +33,7 @@ const routes: Routes = [
 {path:'salaryreport/:sid',component:SalaryreportComponent},
 {path:'editemployee/:id',component:EditemployeeComponent},
 {path:'searchemail',component:SearchemployeeComponent},
+{path:'addhr',component:AddhrComponent},
 ];
 
 @NgModule({

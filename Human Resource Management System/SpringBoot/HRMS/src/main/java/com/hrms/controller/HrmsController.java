@@ -49,6 +49,25 @@ public class HrmsController {
 		return userObj;
 	}
 
+	// add hr user
+	@PostMapping("/addhr")
+	public User addHr(@RequestBody User user) throws Exception {
+		// to check whether email is already present or not
+		String tempEmail = user.getEmail();
+		System.out.println("Temp email is :"+tempEmail);
+//			// fetch user email object
+			User user1 = uservice.fetchUserByEmail(tempEmail);
+			if (user1 != null) {
+				throw new Exception("User with " + tempEmail + " allready exist ");
+			}
+			else
+			{
+				user1 = uservice.register(user);
+				return user1;
+			}
+		
+	}
+
 //for employee CRUD  start
 	// Get list of employee
 	@GetMapping("/employeereport")
@@ -109,14 +128,13 @@ public class HrmsController {
 		int tempId = leaves.getEid();
 		System.out.println("TempEid: " + tempId);
 		Employee emp = lservice.findEmailByEid(tempId);
-		
+
 		if (emp.getEmail() != null) {
 			leaves.setEmail(emp.getEmail());
 			return lservice.register(leaves);
 		} else {
 			throw new Exception("Employee with " + tempId + " Not exists ");
 		}
-		
 
 	}
 

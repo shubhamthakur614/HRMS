@@ -18,6 +18,7 @@ import { EditemployeeComponent } from './editemployee/editemployee.component';
 import { EditsalaryComponent } from './editsalary/editsalary.component';
 import { EditleavesComponent } from './editleaves/editleaves.component';
 import { SearchemployeeComponent } from './searchemployee/searchemployee.component';
+import { AddhrComponent } from './addhr/addhr.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { SearchemployeeComponent } from './searchemployee/searchemployee.compone
     EditsalaryComponent,
     EditleavesComponent,
     SearchemployeeComponent,
+    AddhrComponent,
     
   ],
   imports: [
